@@ -7,26 +7,29 @@ config:
     - duration: 30
       arrivalRate: 1
       maxVusers: 1
-      name: '1 user for 1 minute, warm up'
-    - duration: 60
-      arrivalRate: 1
-      rampTo: 10
-      name: "10 users for 1 min"
-    - duration: 60
+      name: '1 user'
+    - duration: 30
       arrivalRate: 10
-      rampTo: 100
-      name: "100 users for 1 min"
-    - duration: 120
+      maxVusers: 10
+      name: '10 users'
+    - duration: 60
       arrivalRate: 100
-      rampTo: 1000
-      name: '1000 users for 2 min'
+      maxVusers: 100
+      name: '100 users'
+    - duration: 60
+      arrivalRate: 1000
+      maxVusers: 1000
+      name: '1000 users'
 
 scenarios:
-  - name: "Get items details"
+  - name: 'Get items details'
     flow:
-    - function: "createRandomId"
-    - get:
-        url: "/?={id}"
+      -
+        count: 10
+        loop:
+        - function: 'createRandomId'
+        - get:
+            url: '/?={id}'
   # - name: "Create new item"
   #   weight: 2
   #   flow:
