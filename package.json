@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server",
     "server-dev": "nodemon server",
+    "stress": "artillery run ./stressTest/stressTest.yml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,8 +20,11 @@
   },
   "homepage": "https://github.com/hrr45-fec8-legolas/proxy-legolas-jmaughan#readme",
   "dependencies": {
+    "artillery": "^1.6.0",
     "express": "^4.17.1",
+    "faker": "^4.1.0",
     "http-proxy-middleware": "^1.0.3",
+    "newrelic": "^6.8.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "webpack": "^4.43.0"
