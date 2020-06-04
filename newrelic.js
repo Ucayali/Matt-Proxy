@@ -1,4 +1,5 @@
 /* eslint-disable strict */
+require('dotenv').config();
 
 'use strict';
 
@@ -16,7 +17,7 @@ exports.config = {
   /**
    * Your New Relic license key.
    */
-  license_key: '50575109ce26d5bc69a34e6cb8de759365b5NRAL',
+  license_key: process.env.NEWRELIC_KEY,
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
