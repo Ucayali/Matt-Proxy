@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 // }));
 
 app.use('/items/:id', createProxyMiddleware({
-  target: 'http://localhost:3002/',
+  target: 'http://54.245.145.223/',
   changeOrigin: true,
 }));
 
